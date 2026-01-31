@@ -1,0 +1,21 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [0.1.0] - 2025-01-31
+
+### Added
+
+- Initial release as standalone package
+- **Branch Operations**: `git_create_branch` with naming conventions
+- **Commit Operations**: `git_commit` with conventional commit format
+- **Remote Operations**: `git_push`, `git_pull` with token authentication
+- **Status Operations**: `git_status` for branch and file change info
+- **Sync Operations**: `git_sync_with_main` with merge/rebase strategies
+- Singleton repository pattern for consistent state
+- Structured error handling with actionable suggestions
+- Comprehensive test suite with unit and integration tests
+- Full documentation and usage examples
