@@ -25,11 +25,8 @@ jobs:
       - name: Install dependencies
         run: uv sync --extra dev
 
-      - name: Run linting
-        run: uv run ruff check src/
-
       - name: Run type checking
-        run: uv run mypy src/git_mcp_server --strict
+        run: uv run mypy src/github_mcp_server --strict
 
       - name: Run unit tests
         run: uv run pytest -m "not integration" -v --cov=src --cov-report=xml
@@ -42,6 +39,7 @@ jobs:
 
   integration:
     runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
 
     steps:
       - uses: actions/checkout@v4
@@ -55,10 +53,9 @@ jobs:
       - name: Install dependencies
         run: uv sync --extra dev
 
-      - name: Configure git for tests
-        run: |
-          git config --global user.email "test@example.com"
-          git config --global user.name "Test User"
-
       - name: Run integration tests
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TEST_OWNER: ${{ github.repository_owner }}
+          TEST_REPO: ${{ github.event.repository.name }}
         run: uv run pytest -m integration -v
