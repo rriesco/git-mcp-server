@@ -182,7 +182,9 @@ def git_pull(
             commits_pulled = len(list(repo.iter_commits(f"{sha_before}..{sha_after}")))
             # Get changed files
             diff = repo.commit(sha_before).diff(repo.commit(sha_after))
-            files_changed = list({d.a_path or d.b_path for d in diff if d.a_path or d.b_path})
+            files_changed = [
+                path for d in diff if (path := d.a_path or d.b_path) is not None
+            ]
             up_to_date = False
 
         logger.info(f"Pulled {target_branch} from {remote}: {commits_pulled} commits")

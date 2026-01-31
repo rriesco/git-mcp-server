@@ -95,7 +95,9 @@ def git_sync_with_main(
         if sha_before != sha_after:
             try:
                 diff = repo.commit(sha_before).diff(repo.commit(sha_after))
-                files_changed = list({d.a_path or d.b_path for d in diff if d.a_path or d.b_path})
+                files_changed = [
+                    path for d in diff if (path := d.a_path or d.b_path) is not None
+                ]
             except Exception:
                 files_changed = []
 
