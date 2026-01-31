@@ -1,11 +1,11 @@
 [project]
-name = "git-mcp-server"
+name = "rriesco-mcp-git"
 version = "0.1.1"
 description = "MCP server for local git operations - commit, branch, push, pull, sync"
 readme = "README.md"
 license = {text = "MIT"}
 authors = [
-    {name = "Rafael Riesco", email = "rriesco@users.noreply.github.com"}
+    {name = "rriesco-mcp-git"}
 ]
 keywords = ["mcp", "git", "claude", "anthropic", "automation", "version-control"]
 classifiers = [
