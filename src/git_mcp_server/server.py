@@ -6,19 +6,9 @@ FastMCP server that provides git operation tools to Claude Code via MCP protocol
 import logging
 import os
 import sys
-from pathlib import Path
-
-from dotenv import load_dotenv
 
 # Import the singleton mcp instance from package level
 from . import mcp
-
-# Load environment variables from project root .env file
-# This file is at: git-mcp-server/src/git_mcp_server/server.py
-# Project root is 3 levels up
-project_root = Path(__file__).parent.parent.parent.parent
-env_path = project_root / ".env"
-load_dotenv(env_path, override=True)
 
 # Configure logging to stderr (MCP protocol uses stdout)
 logging.basicConfig(
@@ -28,14 +18,12 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Validate GITHUB_TOKEN is available
+# Check if GITHUB_TOKEN is available (set via MCP config env block)
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")
 if not GITHUB_TOKEN:
-    logger.error("GITHUB_TOKEN not found in environment!")
-    logger.error(f"Searched for .env at: {env_path}")
-    logger.error("GitHub API operations will fail without authentication.")
+    logger.warning("GITHUB_TOKEN not set. Set it in your MCP config for push/pull operations.")
 else:
-    logger.info(f"GITHUB_TOKEN loaded successfully from {env_path}")
+    logger.info("GITHUB_TOKEN available for authenticated GitHub operations")
 
 # Import tool modules to register tools
 # Tools are registered via @mcp.tool() decorators in each module

@@ -1,6 +1,6 @@
 [project]
 name = "rriesco-mcp-git"
-version = "0.1.5"
+version = "0.1.6"
 description = "MCP server for local git operations - commit, branch, push, pull, sync"
 readme = "README.md"
 license = {text = "MIT"}
