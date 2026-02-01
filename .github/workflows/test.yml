@@ -26,7 +26,7 @@ jobs:
         run: uv sync --extra dev
 
       - name: Run type checking
-        run: uv run mypy src/github_mcp_server --strict
+        run: uv run mypy src/git_mcp_server --strict
 
       - name: Run unit tests
         run: uv run pytest -m "not integration" -v --cov=src --cov-report=xml

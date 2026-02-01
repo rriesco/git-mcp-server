@@ -24,9 +24,6 @@ Tools for committing changes to the repository:
 - Support for commit types: feat, fix, docs, refactor, test, chore
 - Automatic Claude Code attribution
 
-**Replaces**:
-- `github-manager/commit_changes.py`
-
 ---
 
 ### 2. Branch Management
@@ -38,9 +35,6 @@ Tools for managing git branches:
 - `switch_branch`: Switch to existing branch
 - `delete_branch`: Delete local branch
 - Support for conventional branch naming (issue-N-description, feature-, fix-, etc.)
-
-**Replaces**:
-- `github-manager/create_feature_branch_from_main.py`
 
 ---
 
@@ -54,10 +48,6 @@ Tools for pushing and pulling:
 - Automatic upstream tracking configuration
 - Authentication via git credential helper
 
-**Replaces**:
-- `github-manager/push_branch.py`
-- `github-manager/pull_branch.py`
-
 ---
 
 ### 4. Sync Operations
@@ -69,9 +59,6 @@ Tools for syncing with main branch:
 - Conflict detection and reporting
 - Automatic merge commit creation
 
-**Replaces**:
-- `github-manager/sync_with_main.py`
-
 ---
 
 ### 5. Status Operations
@@ -82,9 +69,6 @@ Tools for checking repository status:
 - `git_status`: Get current repository status
 - Reports: current branch, uncommitted changes, untracked files, ahead/behind remote
 - Structured status information for programmatic use
-
-**Replaces**:
-- Manual `git status` commands
 
 ---
 
@@ -221,6 +205,10 @@ All tools will include:
 - Fix `__version__` to report correct version
 - Update outdated documentation
 - Remove broken links
+
+### Version 0.1.5
+- Fix CI/CD mypy path
+- Remove outdated script references
 
 ---
 
