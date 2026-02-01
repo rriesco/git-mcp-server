@@ -11,13 +11,13 @@ The Git MCP server provides tools for local git operations:
 - Syncing with main branch
 - Checking repository status
 
-**Status**: Infrastructure complete (Task 4.9). Tools will be added in tasks 4.10-4.14.
+**Status**: All tools fully implemented (v0.1.0+).
 
 ## Tool Categories
 
-### 1. Commit Operations (Task 4.10)
+### 1. Commit Operations
 
-**Status**: Coming soon
+**Status**: Implemented
 
 Tools for committing changes to the repository:
 - `commit`: Stage all changes and create commit with conventional format
@@ -29,9 +29,9 @@ Tools for committing changes to the repository:
 
 ---
 
-### 2. Branch Management (Task 4.11)
+### 2. Branch Management
 
-**Status**: Coming soon
+**Status**: Implemented
 
 Tools for managing git branches:
 - `create_branch`: Create new feature branch from main
@@ -44,9 +44,9 @@ Tools for managing git branches:
 
 ---
 
-### 3. Remote Operations (Task 4.12)
+### 3. Remote Operations
 
-**Status**: Coming soon
+**Status**: Implemented
 
 Tools for pushing and pulling:
 - `push`: Push current branch to remote
@@ -60,9 +60,9 @@ Tools for pushing and pulling:
 
 ---
 
-### 4. Sync Operations (Task 4.13)
+### 4. Sync Operations
 
-**Status**: Coming soon
+**Status**: Implemented
 
 Tools for syncing with main branch:
 - `sync_with_main`: Fetch and merge latest main branch changes
@@ -74,9 +74,9 @@ Tools for syncing with main branch:
 
 ---
 
-### 5. Status Operations (Task 4.14)
+### 5. Status Operations
 
-**Status**: Coming soon
+**Status**: Implemented
 
 Tools for checking repository status:
 - `git_status`: Get current repository status
@@ -90,12 +90,9 @@ Tools for checking repository status:
 
 ## Tool Usage Examples
 
-**Note**: Examples will be added as tools are implemented in tasks 4.10-4.14.
-
-### Example: Commit Changes (Task 4.10)
+### Example: Commit Changes
 
 ```python
-# Will be available after Task 4.10
 result = commit(
     type="feat",
     message="implement query helper functions",
@@ -103,36 +100,32 @@ result = commit(
 )
 ```
 
-### Example: Create Branch (Task 4.11)
+### Example: Create Branch
 
 ```python
-# Will be available after Task 4.11
 result = create_branch(
     issue_number=42,
     description="add-feature-x"
 )
 ```
 
-### Example: Push to Remote (Task 4.12)
+### Example: Push to Remote
 
 ```python
-# Will be available after Task 4.12
 result = push(
     set_upstream=True
 )
 ```
 
-### Example: Sync with Main (Task 4.13)
+### Example: Sync with Main
 
 ```python
-# Will be available after Task 4.13
 result = sync_with_main()
 ```
 
-### Example: Check Status (Task 4.14)
+### Example: Check Status
 
 ```python
-# Will be available after Task 4.14
 status = git_status()
 print(status["branch"])
 print(status["changes"])
@@ -207,30 +200,34 @@ All tools will include:
 
 ## Version History
 
-### Version 0.1.0 (Task 4.9 - Infrastructure)
-- Initial infrastructure setup
+### Version 0.1.0
+- Initial release with all core tools implemented
 - Git client singleton (`get_repo`, `reset_repo`)
 - Structured error handling (`GitError`, `handle_git_error`)
 - FastMCP server initialization
-- Comprehensive test suite (79 tests, 100% utils coverage)
+- Comprehensive test suite
 
-### Future Versions
+### Version 0.1.1
+- Renamed package to `rriesco-mcp-git` for PyPI publishing
 
-- **0.2.0** (Task 4.10): Commit operations
-- **0.3.0** (Task 4.11): Branch management
-- **0.4.0** (Task 4.12): Remote operations
-- **0.5.0** (Task 4.13): Sync operations
-- **1.0.0** (Task 4.14): Status operations - First stable release
+### Version 0.1.2
+- Fixed `uv sync --extra dev` for dev dependencies
+- Fixed mypy type errors
+
+### Version 0.1.3
+- Version bump release
+
+### Version 0.1.4
+- Fix `__version__` to report correct version
+- Update outdated documentation
+- Remove broken links
 
 ---
 
 ## Additional Resources
 
 - [Git MCP Server README](../README.md) - Setup and installation
-- [GitHub MCP Server Tools](../../github-mcp-server/docs/mcp-tools.md) - GitHub API tools
-- [MCP Migration Guide](../../docs/mcp-migration-guide.md) - Migration from scripts
-- [Test Patterns](../../docs/test-patterns.md) - Testing guidelines
 
 ---
 
-**Last Updated**: Task 4.9 Complete (Infrastructure) - January 2026
+**Last Updated**: January 2025

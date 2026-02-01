@@ -5,6 +5,34 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.4] - 2025-01-31
+
+### Fixed
+
+- Fix `__version__` in package to report correct version
+- Update outdated documentation in docs/tools.md (remove "Coming soon" references)
+- Remove broken links to non-existent documentation files
+- Add missing CHANGELOG entries for v0.1.1, v0.1.2, v0.1.3
+
+## [0.1.3] - 2025-01-31
+
+### Changed
+
+- Version bump release
+
+## [0.1.2] - 2025-01-31
+
+### Fixed
+
+- Use `uv sync --extra dev` to install dev dependencies correctly
+- Fix mypy type errors
+
+## [0.1.1] - 2025-01-31
+
+### Changed
+
+- Renamed package to `rriesco-mcp-git` for PyPI publishing
+
 ## [0.1.0] - 2025-01-31
 
 ### Added
